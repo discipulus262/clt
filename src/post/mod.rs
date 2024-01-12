@@ -28,5 +28,5 @@ pub fn read() -> u32{
     result
 }
 pub fn help(){
-    println!("helP");
+    println!("CLT, a command line social media program");
 }

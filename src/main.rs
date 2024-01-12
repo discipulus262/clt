@@ -5,16 +5,17 @@ fn init_post(name: String){
 }
 fn main() {
     let name = post::get_uname();
-    println!("enter 1 to read, 2 to post 3 for help");
-    let action = post::read();
-    match action {
-        1 => println!("not work yet"),
-        2 => init_post(name),
-        3 => post::help(),
-        4 => hello(name),
-        _  => println!("not valid argument"),
+    println!("enter 1 to read, 2 to post, 3 for help, 4 to quit");
+    loop {
+        print!(">");
+        let action = post::read();
+        match action {
+            1 => println!("not work yet"),
+            2 => init_post(name.clone()),
+            3 => post::help(),
+            4 => break, 
+            _  => println!("not valid argument"),
+        }
     }
 }
-fn hello(hello: String){
-    println!("hello {hello}");
-}
+
