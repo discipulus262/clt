@@ -5,6 +5,7 @@ fn init_post(name: String){
 }
 fn main() {
     let name = post::get_uname();
+    //instuructions
     println!("enter 1 to read, 2 to post, 3 for help, 4 to quit");
     loop {
         print!(">");
