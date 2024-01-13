@@ -1,2 +1,2 @@
-#A Social media site for the command line. #
+# A task Manager for the command line 
 Not very good yet
