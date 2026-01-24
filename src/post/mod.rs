@@ -1,32 +1,21 @@
 mod read;
-mod data;
+mod tomlreader;
+pub fn summarize(msg: String) {
+    println!("new task created: {}", msg);
+}
 
-pub fn summarize(post: data::Post){
-    println!("new post from {} (press 1 to read more)", post.author);
-    let choice = read::read_u32();
-    if choice == 1 {
-        println!("{} wrote {}", post.author, post.content);
-        //add to database with status read for name
-    }
-}
-pub fn get_uname() -> String{
-    println!("what do you want people to call you");
-    let uname = read::read_string();
-    uname
-}
-pub fn post(uname: String) -> data::Post {
+pub fn post() -> String {
     println!("type your post");
     let msg = read::read_string();
-    data::Post{
-        status: data::Status::Unread,
-        content: msg,
-        author: uname, 
-    }
+    msg
 }
-pub fn read() -> u32{
+pub fn read() -> u32 {
     let result = read::read_u32();
     result
 }
-pub fn help(){
-    println!("CLT, a command line social media program");
+pub fn help() {
+    println!("CLT, a task manager for the terminal");
+}
+pub fn write_data(taskname: String) {
+    tomlreader::write(taskname)
 }
